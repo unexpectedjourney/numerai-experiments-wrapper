@@ -7,7 +7,7 @@ from utils.model_enums import ModelName
 log = setup_logger(__name__)
 
 
-def get_all_models(request):
+async def get_all_models(request):
     return web.json_response([
         {"linear_regression": ModelName.LINEAR_REGRESSION.value},
         {"elastic_net": ModelName.ELASTIC_NET.value},
@@ -16,7 +16,7 @@ def get_all_models(request):
     ], status=HTTPStatus.CREATED)
 
 
-def execute_model(request):
+async def execute_model(request):
     if request.method == "POST":
         data = await request.json()
         log.info(data)

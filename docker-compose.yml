@@ -14,21 +14,21 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
 
-  # api:
-  #   build:
-  #     context: .
-  #     dockerfile: ./api/Dockerfile
-  #   ports:
-  #     - "8080:8080"
-  #   volumes:
-  #     - "./api/:/usr/app/"
-  #     - "./utils/:/usr/app/utils/"
-  #     - "./upload/:/usr/app/upload/"
-  #   depends_on:
-  #     - rabbitmq
-  #     - mongodb
-  #   env_file:
-  #     - .env
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./api/:/usr/app/"
+      - "./utils/:/usr/app/utils/"
+      - "./upload/:/usr/app/upload/"
+    depends_on:
+      - rabbitmq
+      - mongodb
+    env_file:
+      - .env
 
   core:
     build:

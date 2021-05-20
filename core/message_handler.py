@@ -1,5 +1,4 @@
 from bson import json_util
-from colorization import colorize_file
 from utils.constants import RESPONSE_QUEUE
 from utils.events import RabbitMQEvents
 from utils.logger import setup_logger
@@ -20,7 +19,8 @@ async def _on_message(message, rabbitmq):
 
     if message_type == RabbitMQEvents.REQUEST_COLORIZATION.value:
         log.info(RabbitMQEvents.REQUEST_COLORIZATION.name)
-        filename = await colorize_file(message_params)
+        # filename = await colorize_file(message_params)
+        filename = ...
         if filename:
             message = RabbitMQMessage(
                 "core",
