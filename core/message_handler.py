@@ -17,21 +17,22 @@ async def _on_message(message, rabbitmq):
     if not message_type or not message_params:
         return
 
-    if message_type == RabbitMQEvents.REQUEST_COLORIZATION.value:
-        log.info(RabbitMQEvents.REQUEST_COLORIZATION.name)
-        # filename = await colorize_file(message_params)
-        filename = ...
-        if filename:
-            message = RabbitMQMessage(
-                "core",
-                RabbitMQEvents.RESPONSE_COLORIZATION.value,
-                {
-                    "filename": filename
-                }
-            )
-            await rabbitmq.publish(
-                queue=RESPONSE_QUEUE, body=message.to_json())
-            log.info("Message was sent\n")
+    if message_type == RabbitMQEvents.REQUEST_MODEL_EXECUTION.value:
+        log.info(RabbitMQEvents.REQUEST_MODEL_EXECUTION.name)
+
+        filename, task_id = await execute_model(message_params)
+
+        message = RabbitMQMessage(
+            "core",
+            RabbitMQEvents.RESPONSE_MODEL_EXECUTION.value,
+            {
+                "filename": filename,
+                "filename": task_id,
+            }
+        )
+        await rabbitmq.publish(
+            queue=RESPONSE_QUEUE, body=message.to_json())
+        log.info("Message was sent\n")
     else:
         log.warn("Unknown message_type was found")
 
