@@ -3,6 +3,7 @@ from utils.constants import RESPONSE_QUEUE
 from utils.events import RabbitMQEvents
 from utils.logger import setup_logger
 from utils.rabbitmq.message import RabbitMQMessage
+from model_execution import execute_model
 
 log = setup_logger(__name__)
 
@@ -20,14 +21,16 @@ async def _on_message(message, rabbitmq):
     if message_type == RabbitMQEvents.REQUEST_MODEL_EXECUTION.value:
         log.info(RabbitMQEvents.REQUEST_MODEL_EXECUTION.name)
 
-        filename, task_id = await execute_model(message_params)
+        filename, task_id, model_id, model_params = await execute_model(message_params)
 
         message = RabbitMQMessage(
             "core",
             RabbitMQEvents.RESPONSE_MODEL_EXECUTION.value,
             {
                 "filename": filename,
-                "filename": task_id,
+                "task_id": task_id,
+                "model_id": model_id,
+                "model_params": model_params,
             }
         )
         await rabbitmq.publish(

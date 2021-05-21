@@ -28,7 +28,7 @@ async def insert_task(type, task_id):
 
 
 async def complete_task(task_id):
-    return await _tasks_collection.update(
+    return await _tasks_collection.update_one(
         {"task_id": task_id},
         {
             "$set": {

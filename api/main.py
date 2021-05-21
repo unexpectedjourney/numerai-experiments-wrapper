@@ -8,7 +8,6 @@ from aiohttp_session.cookie_storage import EncryptedCookieStorage
 from aiohttp_swagger import setup_swagger
 from cryptography import fernet
 from message_handler import rabbitmq_message_handler
-from middlewares.login import auth_middleware
 from urls import get_routers
 
 from utils.constants import RESPONSE_QUEUE
@@ -20,8 +19,7 @@ log = setup_logger(__name__)
 
 async def main():
     log.info("API application setup has started")
-    app = web.Application(
-        client_max_size=2 ** 50, middlewares=[auth_middleware])
+    app = web.Application(client_max_size=2 ** 50)
     get_routers(app)
 
     fernet_key = fernet.Fernet.generate_key()
