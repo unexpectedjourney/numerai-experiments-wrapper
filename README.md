@@ -30,3 +30,7 @@ docker-compose build
 ```
 docker-compose up
 ```
+
+### Environment file
+To work with the project, you should create `.env` file based on `.env.example`
+
