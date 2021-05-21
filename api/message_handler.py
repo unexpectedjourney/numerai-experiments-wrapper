@@ -14,7 +14,6 @@ async def _on_message(message, rabbitmq):
     message = json_util.loads(message.body)
     message_obj = RabbitMQMessage.from_json(message)
 
-
     message_type = message_obj.message_type
     message_params = message_obj.message_params
 

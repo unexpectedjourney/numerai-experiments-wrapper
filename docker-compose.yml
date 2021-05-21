@@ -61,12 +61,12 @@ services:
   #   env_file:
   #     - .env
 
-  # nginx:
-  #   image: nginx:1.17.10
-  #   ports:
-  #     - 80:80
-  #   volumes:
-  #     - ./nginx.conf:/etc/nginx/nginx.conf
-  #     - ./upload:/upload
-  #   depends_on:
-  #     - api
+  nginx:
+    image: nginx:1.17.10
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./upload:/upload
+    depends_on:
+      - api

@@ -10,7 +10,7 @@ def get_urls():
         web.get("/api/model/", get_all_models, name="get_model"),
         web.post("/api/model/", execute_model, name="execute_model"),
         web.get("/api/state/", get_all_states, name="get_states"),
-        web.get("/api/state/:id/", get_state, name="get_state"),
+        web.get("/api/state/{state_id}/", get_state, name="get_state"),
     ]
 
 
