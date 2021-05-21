@@ -2,5 +2,5 @@ from enum import Enum
 
 
 class RabbitMQEvents(Enum):
-    REQUEST_COLORIZATION = 1
-    RESPONSE_COLORIZATION = 2
+    REQUEST_MODEL_EXECUTION = 1
+    RESPONSE_MODEL_EXECUTION = 2

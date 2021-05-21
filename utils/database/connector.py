@@ -9,4 +9,4 @@ client = motor.motor_asyncio.AsyncIOMotorClient(
     password=os.environ.get("MONGODB_ROOT_PASSWORD", ""),
 )
 
-database = client.colorization
+database = client.numerai
