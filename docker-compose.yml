@@ -45,21 +45,21 @@ services:
     env_file:
       - .env
 
-  # web:
-  #   build:
-  #     context: .
-  #     dockerfile: ./web/Dockerfile
-  #     target: 'develop-stage'
-  #   ports:
-  #     - "8082:8080"
-  #   volumes:
-  #     - "./web/:/usr/app/"
-  #     - /usr/app/node_modules/
-  #   command: "yarn run serve"
-  #   depends_on:
-  #     - api
-  #   env_file:
-  #     - .env
+  web:
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile
+      target: 'develop-stage'
+    ports:
+      - "8082:8080"
+    volumes:
+      - "./web/:/usr/app/"
+      - /usr/app/node_modules/
+    command: "yarn run serve"
+    depends_on:
+      - api
+    env_file:
+      - .env
 
   nginx:
     image: nginx:1.17.10

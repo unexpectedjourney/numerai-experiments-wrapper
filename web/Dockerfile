@@ -1,9 +1,9 @@
 # develop stage
-FROM node:12 as develop-stage
+FROM node:14 as develop-stage
 WORKDIR /usr/app
 COPY web/package*.json ./
 RUN yarn global add @vue/cli \
-    && yarn global add @vue/cli-service-global \
+    # && yarn global add @vue/cli-service-global \
     && yarn install
 COPY web/ .
 
