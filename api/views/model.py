@@ -17,11 +17,23 @@ log = setup_logger(__name__)
 
 async def get_all_models(request):
     return web.json_response([
-        {"linear_regression": ModelName.LINEAR_REGRESSION.value},
-        {"elastic_net": ModelName.ELASTIC_NET.value},
-        {"lasso": ModelName.LASSO.value},
-        {"ridge": ModelName.RIDGE.value},
-    ], status=HTTPStatus.CREATED)
+        {
+            "id": ModelName.LINEAR_REGRESSION.value,
+            "model_name": "linear_regression",
+        },
+        {
+            "id": ModelName.ELASTIC_NET.value,
+            "model_name": "elastic_net",
+        },
+        {
+            "id": ModelName.LASSO.value,
+            "model_name": "lasso",
+        },
+        {
+            "id": ModelName.RIDGE.value,
+            "model_name": "ridge",
+        }
+    ], status=HTTPStatus.OK)
 
 
 async def execute_model(request):
