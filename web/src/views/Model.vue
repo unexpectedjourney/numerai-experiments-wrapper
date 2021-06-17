@@ -47,6 +47,7 @@ export default {
         "model_params": {}
       }
       const response = await axios.post(`/api/model/`, data);
+      this.$router.push({name:'Models'});
     },
     async tuneModel() {
       let data = {
@@ -55,6 +56,7 @@ export default {
         "model_params": {}
       }
       const response = await axios.post(`/api/model/`, data);
+      this.$router.push({name:'Models'});
     },
     async testModel() {
       let data = {
@@ -63,6 +65,7 @@ export default {
         "model_params": {}
       }
       const response = await axios.post(`/api/model/`, data);
+      this.$router.push({name:'Models'});
     },
     async submitModel() {
       let data = {
@@ -71,6 +74,7 @@ export default {
         "model_params": {}
       }
       const response = await axios.post(`/api/model/`, data);
+      this.$router.push({name:'Models'});
     },
 
   }
