@@ -16,7 +16,7 @@ import axios from "axios";
 import ModelBlock from '@/components/ModelBlock.vue'
 
 export default {
-  name: 'Models',
+  name: 'Model',
   components: {
     ModelBlock
   },

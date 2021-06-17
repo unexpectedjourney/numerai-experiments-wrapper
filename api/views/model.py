@@ -37,7 +37,6 @@ async def get_all_models(request):
 
 
 async def execute_model(request):
-    log.info("322")
     if request.method == "POST":
         data = await request.json()
         log.info(data)
