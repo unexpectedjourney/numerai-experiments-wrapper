@@ -39,3 +39,4 @@ six==1.14.0
 tifffile==2020.5.11
 webargs==5.5.3
 yarl==1.4.2
+flake8==3.9.2
