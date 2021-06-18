@@ -1,3 +1,5 @@
+[!Build Status](https://github.com/unexpectedjourney/numerai-experiments-wrapper/actions/workflows/tests.yml/badge.svg?branch=main)
+
 # numeria-experiments-wrapper
 
 This project contains the implementation of numeria experiments web-wrapper, which is a final project for UCU Software Architecture for Data Science in Python.
