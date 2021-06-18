@@ -14,7 +14,7 @@ jobs:
       matrix:
         python-version: [3.8, 3.9]
     steps:
-      - uses: actions/chechout@v2
+      - uses: actions/checkout@v2
       - name: Install python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
