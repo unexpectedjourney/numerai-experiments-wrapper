@@ -1,4 +1,4 @@
-[!Build Status](https://github.com/unexpectedjourney/numerai-experiments-wrapper/actions/workflows/tests.yml/badge.svg?branch=main)
+![Build Status](https://github.com/unexpectedjourney/numerai-experiments-wrapper/actions/workflows/tests.yml/badge.svg?branch=main)
 
 # numeria-experiments-wrapper
 
