@@ -7,7 +7,7 @@ from aiohttp_session import setup
 from aiohttp_session.cookie_storage import EncryptedCookieStorage
 from aiohttp_swagger import setup_swagger
 from cryptography import fernet
-from message_handler import rabbitmq_message_handler
+from message_handler_api import rabbitmq_message_handler
 from urls import get_routers
 
 from utils.constants import RESPONSE_QUEUE

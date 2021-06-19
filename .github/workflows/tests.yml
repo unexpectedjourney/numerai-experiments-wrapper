@@ -25,6 +25,6 @@ jobs:
           pip install -r core/requirements.txt
           pip install -r api/requirements.txt
       - name: Run flake8
-        run: flake8 core/ api/
+        run: flake8 --ignore=E402 core/ api/
 #       - name: Run mypy
 #         run: mypy . --exclude '/main\.py$'

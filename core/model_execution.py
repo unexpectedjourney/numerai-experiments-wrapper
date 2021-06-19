@@ -1,5 +1,4 @@
 import sys
-import pandas as pd
 import uuid
 from pathlib import Path
 
@@ -23,8 +22,8 @@ model_mapper = {
 async def execute_model(message_params):
     task_id = message_params.get('task_id')
     model_id = message_params.get('model_id')
-    # model_params = message_params.get('model_params')
-    # action = message_params.get('action')
+    model_params = message_params.get('model_params')
+    action = message_params.get('action')
 
     dir_path = Path("./data")
     train_file = dir_path / "train.csv"
