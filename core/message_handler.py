@@ -21,7 +21,8 @@ async def _on_message(message, rabbitmq):
     if message_type == RabbitMQEvents.REQUEST_MODEL_EXECUTION.value:
         log.info(RabbitMQEvents.REQUEST_MODEL_EXECUTION.name)
 
-        filename, task_id, model_id, model_params = await execute_model(message_params)
+        filename, task_id, model_id, model_params = \
+            await execute_model(message_params)
 
         message = RabbitMQMessage(
             "core",

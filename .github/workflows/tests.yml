@@ -24,6 +24,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r core/requirements.txt
       - name: Run flake8
-        run: flake8 core/
+        run: flake8 core/ api/
       - name: Run mypy
         run: mypy .
