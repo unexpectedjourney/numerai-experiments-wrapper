@@ -47,4 +47,3 @@ async def execute_model(request):
         await rabbitmq.publish(queue=REQUEST_QUEUE, body=message.to_json())
 
         return web.json_response(status=HTTPStatus.CREATED)
-
