@@ -2,8 +2,8 @@
     <div class="media">
         <div class="media-body">
             <h3 class="text-center image-link-text">{{model.model_name}}</h3>
-            <button type="button" v-on:click="trainModel()" class="btn btn-outline-primary">Train</button>
-            <button type="button" v-on:click="tuneModel()" class="btn btn-outline-secondary">Tune Params</button>
+<!--             <button type="button" v-on:click="trainModel()" class="btn btn-outline-primary">Train</button>
+            <button type="button" v-on:click="tuneModel()" class="btn btn-outline-secondary">Tune Params</button> -->
             <button type="button" v-on:click="testModel()" class="btn btn-outline-success">Predict and Score</button>
             <button type="button" v-on:click="submitModel()" class="btn btn-outline-warning">Submit</button>
         </div>
