@@ -1,0 +1,3 @@
+[submodule "numerai"]
+	path = numerai
+	url = https://github.com/unexpectedjourney/numerai.git
