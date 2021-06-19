@@ -6,7 +6,7 @@ from aiohttp import web
 from utils.logger import setup_logger
 from utils.model_enums import ModelName
 from utils.constants import REQUEST_QUEUE
-from utils.database.convertor import simplify_objects
+# from utils.database.convertor import simplify_objects
 from utils.database.task import insert_task
 from utils.rabbitmq.message import RabbitMQMessage
 from utils.events import RabbitMQEvents
