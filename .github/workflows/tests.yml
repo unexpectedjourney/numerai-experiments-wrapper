@@ -26,5 +26,5 @@ jobs:
           pip install -r api/requirements.txt
       - name: Run flake8
         run: flake8 core/ api/
-      - name: Run mypy
-        run: mypy . --exclude '/main\.py$'
+#       - name: Run mypy
+#         run: mypy . --exclude '/main\.py$'
