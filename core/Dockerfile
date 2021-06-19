@@ -11,4 +11,6 @@ RUN apt-get update \
 WORKDIR /usr/app
 
 COPY ./core/ .
+RUN git clone https://github.com/unexpectedjourney/numerai.git
+
 CMD ["python", "main.py"]

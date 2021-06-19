@@ -3,6 +3,10 @@
         <div class="media-body">
             <h3 class="text-center image-link-text">{{state._id}}</h3>
             <h4 class="text-center image-link-text">{{state.created_at}}</h4>
+
+            <div v-if="state.filepath">
+              <a :href="`http://localhost/${state.filepath}`" download="a322.csv" type="text/csv">Submition file</a>
+            </div>
         </div>
 
     </div>

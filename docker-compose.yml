@@ -40,6 +40,8 @@ services:
       - "./core/:/usr/app/"
       - "./utils/:/usr/app/utils/"
       - "./upload/:/usr/app/upload/"
+      - "./numerai/:/usr/app/numerai/"
+      - "./data/:/usr/app/data/"
     depends_on:
       - rabbitmq
     env_file:
